@@ -1,0 +1,36 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+class employee{
+	String name;
+	String phoneNumber;
+	String address;
+	employee(String name,String phoneNumber,String address){
+		this.name=name;
+		this.phoneNumber=phoneNumber;
+		this.address=address;
+	}
+};
+public class test{
+	public static void main(String[] args){
+		Map<Integer,employee> employeeMap=new HashMap<Integer,employee>();
+		for(Integer employIndex=1001;employIndex<=1003;employIndex++){
+			String tmp=employIndex.toString();
+			employeeMap.put(employIndex,new employee("employee-"+tmp,"85523927-"+tmp,"address-"+tmp));
+		}
+		int employeeNo=0;
+		System.out.print("请输入员工编号");
+		Scanner s=new Scanner(System.in);
+		employeeNo =s.nextInt();
+		employee result=employeeMap.get(employeeNo);
+		if(result==null){
+			System.out.println("该员工编号不存在！");
+			return;
+		}else{
+			System.out.println("你所查询的员工编号为："+employeeNo);
+			System.out.println("该员工姓名："+result.name);
+			System.out.println("该员工电话："+result.phoneNumber);
+			System.out.println("该员工地址："+result.address);
+		}
+	}
+}
