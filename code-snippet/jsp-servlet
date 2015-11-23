@@ -7,15 +7,13 @@
 	
 	String inf="N/A";
 	if("cc_dd".startsWith("cc")){
-	String[] ee="cc_dd".split(_);
-	for(String e:ee){
-		System.out.println(e);
+		String[] ee="cc_dd".split(_);
+		for(String e:ee){
+			System.out.println(e);
+		}
+		String tt="cc_dd".substring(1, 4);
+		System.out.println(tt);
 	}
-	String tt="cc_dd".substring(1, 4);
-	System.out.println(tt);
-	
-	
-}
 %>
 </script>
 
