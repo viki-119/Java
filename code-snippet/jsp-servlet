@@ -6,12 +6,12 @@
 	System.out.println(getUrlInfo);
 	
 	String inf="N/A";
-	if("cc_dd".startsWith("cc")){
-		String[] ee="cc_dd".split("_");
+	if("cc_DD".startsWith("cc")){
+		String[] ee="cc_DD".split("_");
 		for(String e:ee){
-			System.out.println(e);
+			System.out.println(e.toUpperCase());
 		}
-		String tt="cc_dd".substring(1, 4);
+		String tt="cc_DD".substring(1, 4);
 		System.out.println(tt);
 	}
 %>
