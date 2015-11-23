@@ -1,0 +1,8 @@
+//jsp coding for servlet 获取url
+<script type="text/javascript">
+<%
+	String getUrlInfo =request.getScheme()+"://"+request.getServerName()+":"+
+	request.getServerPort()+request.getContextPath()+"/";
+	System.out.println(getUrlInfo);
+%>
+</script>
