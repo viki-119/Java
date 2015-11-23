@@ -4,5 +4,12 @@
 	String getUrlInfo =request.getScheme()+"://"+request.getServerName()+":"+
 	request.getServerPort()+request.getContextPath()+"/";
 	System.out.println(getUrlInfo);
+	
+	String inf="N/A";
+	if("cc_dd".startsWith("cc")){
+	String tt="cc_dd".substring(1, 4);
+		System.out.println(tt);
+}
 %>
 </script>
+
