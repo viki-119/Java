@@ -7,7 +7,7 @@
 	
 	String inf="N/A";
 	if("cc_dd".startsWith("cc")){
-		String[] ee="cc_dd".split(_);
+		String[] ee="cc_dd".split("_");
 		for(String e:ee){
 			System.out.println(e);
 		}
