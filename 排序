@@ -1,7 +1,7 @@
 冒泡排序：
 public class bubbleSort {  
 	public static void main(String[] args){
-	    int a[]={49,38,65,97,76,13,27,49};  
+	    int a[]={49,38,65};  
 	    int temp=0;  
 	    for(int i=0;i<a.length-1;i++) { 
 	        for(int j=0;j<a.length-1-i;j++){
