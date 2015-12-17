@@ -1,4 +1,5 @@
 冒泡排序：
+方式一：
 public class bubbleSort {  
 	public static void main(String[] args){
 	    int a[]={49,38,65};  
@@ -17,4 +18,31 @@ public class bubbleSort {
 	    }
 	}  	
 }  
+方式二：
+public class MaoPaoSort {
+	public static void main(String[] args) {
+		try {
+			int mp[] = new int[args.length];
+			for (int i = 0; i < args.length; i++) {
+				mp[i] = Integer.parseInt(args[i]);
+			}
+			for (int i = 0; i < mp.length-1; i++) {
+				for (int j = 0; j < mp.length-1-i; j++) {
+					int temp;
+					if (mp[j] > mp[j+1]) {
+						temp = mp[j];
+						mp[j] = mp[j+1];
+						mp[j+1] = temp;
+					}
+				}
+			}
+			for (int i = 0; i < mp.length; i++) {
+				System.out.print(mp[i] + " ");
+			}
+			System.out.print("\n");	
+		} catch (Exception e) {
+			System.out.println("没有传递参数或者参数类型不正确！请按照规则输入参数！程序退出...");
+		}
+	}
+}
 选择排序：
