@@ -1,0 +1,25 @@
+/*******************************************************************************************/
+java性能测试代码
+/*******************************************************************************************/
+public class xx{
+  @Test
+	public void testPerformance() throws Exception{
+		System.out.println("性能测试:");
+		//测试DOM的性能:
+		long start = System.currentTimeMillis();
+		domXmlParser();
+		System.out.println("DOM:"+ (System.currentTimeMillis() - start) );
+		//测试SAX的性能:
+		start = System.currentTimeMillis();
+		saxXmlParser();
+		System.out.println("SAX:"+ (System.currentTimeMillis() - start) );
+		//测试JDOM的性能:
+		start = System.currentTimeMillis();
+		jdomXmlParser();
+		System.out.println("JDOM:"+ (System.currentTimeMillis() - start) );
+		//测试DOM4J的性能:
+		start = System.currentTimeMillis();
+		dom4jXmlParser();
+		System.out.println("DOM4J:"+ (System.currentTimeMillis() - start) );
+	}
+}
