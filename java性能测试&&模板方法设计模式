@@ -1,0 +1,54 @@
+/*******************************************************************************************/
+java性能测试代码
+/*******************************************************************************************/
+public class xx{
+  @Test
+	public void testPerformance() throws Exception{
+		System.out.println("性能测试:");
+		//测试DOM的性能:
+		long start = System.currentTimeMillis();
+		domXmlParser();
+		System.out.println("DOM:"+ (System.currentTimeMillis() - start) );
+		//测试SAX的性能:
+		start = System.currentTimeMillis();
+		saxXmlParser();
+		System.out.println("SAX:"+ (System.currentTimeMillis() - start) );
+		//测试JDOM的性能:
+		start = System.currentTimeMillis();
+		jdomXmlParser();
+		System.out.println("JDOM:"+ (System.currentTimeMillis() - start) );
+		//测试DOM4J的性能:
+		start = System.currentTimeMillis();
+		dom4jXmlParser();
+		System.out.println("DOM4J:"+ (System.currentTimeMillis() - start) );
+	}
+}
+/*******************************************************************************************/
+模板方法设计模式
+定义功能时，功能的一部分是确定，而确定的部分在使用不确定的，
+那么这时就得将不确定的部分暴露出去，由该子类去完成。
+/*******************************************************************************************/
+abstract class demo{
+	public final void getTime(){
+		long start=System.currentTimeMillis();
+		currentTimeMillis();
+		long stop=System.currentTimeMillis();
+		System.out.println("共花费"+(stop-start)+"毫秒");
+	}
+	public abstract void currentTimeMillis();
+}
+
+class Test extends demo{
+	//重写父类的方法
+	public void currentTimeMillis(){
+		你想要计算测试的代码运行时间
+	}
+}
+
+public class xxx{
+	public static void main(String[] args) {
+		Test t=new Test();
+		//这里调用的是父类的方法，在父类方法里在执行子类的方法。
+		t.getTime();
+	}
+}
