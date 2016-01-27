@@ -1,0 +1,39 @@
+import java.io.File;
+
+import jxl.Cell;
+import jxl.Sheet;
+import jxl.Workbook;
+
+public class JxlReadExcel {
+
+	/**
+	 * JXL解析Excel
+	 * @author David
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+		try {
+			//创建workbook
+			Workbook workbook = Workbook.getWorkbook(new File("D:/jxl_test.xls"));
+			//获取第一个工作表sheet
+			Sheet sheet = workbook.getSheet(0);
+//			Sheet sheet = workbook.getSheet("JxlExpExcel");
+			//获取数据
+//			sheet.getRows()获取表的行数
+			for (int i = 0; i < sheet.getRows(); i++) {
+//			sheet.getColumns()获取表的列数
+				for (int j = 0; j < sheet.getColumns(); j++) {
+//					通过表坐标来定位单元格
+					Cell cell = sheet.getCell(j,i);
+//					通过单元格来获取单元的值
+					System.out.print(cell.getContents() + "  ");
+				}
+				System.out.println();
+			}
+			workbook.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}
